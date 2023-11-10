@@ -1,0 +1,451 @@
+<%@ Page Language="C#" MasterPageFile="~/MainMaster.master" AutoEventWireup="true"
+    CodeFile="PQR.aspx.cs" Inherits="_PQR" %>
+
+<%@ import Namespace="System.Configuration" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
+<asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
+
+
+    <table id="TABLE1" style="font-size: 8pt">
+        <tr>
+            <td style="font-size: 8pt; background-image: none; vertical-align: top; color: inactivecaption;
+                font-family: Sans-Serif; background-color: transparent; text-align: center; height: 54px;">
+                <table style="width: 100%; height: 29%">
+                    <tr>
+                        <td colspan="2" style="text-align: left">
+                            <asp:Table ID="Table3" runat="server" CellPadding="0" CellSpacing="2">
+                                <asp:TableRow ID="TableRow1" runat="server">
+                                    <asp:TableCell ID="clAceptar" runat="server" CssClass="BarButton">
+                                        <asp:LinkButton ID="cmdAceptar" runat="server" OnClick="cmdAceptar_Click" Text="Radicar">
+                                        </asp:LinkButton>
+                                        </asp:TableCell>
+                                    <asp:TableCell runat="server">|</asp:TableCell>
+                                    <asp:TableCell ID="clNuevo" runat="server" CssClass="BarButton">
+                                    <asp:LinkButton ID="cmdNuevo" runat="server" CausesValidation = "false" OnClick="BtnNuevoRad_Click" Text="Nuevo Radicado">
+                                        </asp:LinkButton>
+                                    </asp:TableCell>
+                                                                       
+                                </asp:TableRow>
+                            </asp:Table>
+                                    &nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top; text-align: center">
+            <table bgcolor="ghostwhite" style="vertical-align: top; width: 80px; border-top-style: none;
+                    border-right-style: none; border-left-style: none; text-align: center; border-bottom-style: none">
+                <tr>
+                    <td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="TxtBuscarRadicado"
+                            Enabled="False" ErrorMessage="Debe Digitar Un Número de Radicado" Height="15px"
+                            SetFocusOnError="True" ValidationGroup="ValGroup1" Width="7px">*</asp:RequiredFieldValidator></td>
+                    <td style="text-align: left">
+                        <asp:Label ID="LblNroExterno" runat="server" CssClass="LabelStyle"
+                            Font-Bold="True" Font-Italic="False" Text="Numero Externo:"
+                            Width="145px"></asp:Label></td>
+                    <td style="width: 461px; text-align: left">
+                        <table style="width: 100%">
+                            <tr>
+                                <td>
+                        <asp:TextBox ID="TxtNumeroExterno" runat="server" TabIndex="6" Width="97px"></asp:TextBox></td>
+                                <td style="width: 30px">
+                                </td>
+                                <td>
+                                    <asp:Label ID="LblFechaRadicacion" runat="server" CssClass="LabelStyle"
+                            Font-Bold="True" Text="Fecha de Radicacion:" Width="145px"></asp:Label>
+                                    <asp:Label ID="DateFechaRad" runat="server" Font-Size="Medium" BackColor="Lavender" BorderStyle="Inset" Font-Bold="False"></asp:Label></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="SelDateFechaProcedencia"
+                            ErrorMessage="Seleccione la fecha de Procedencia" Height="15px" SetFocusOnError="True"
+                            Width="7px">*</asp:RequiredFieldValidator></td>
+                    <td style="text-align: left">
+                        <asp:Label ID="LblFechaProcedencia" runat="server" CssClass="LabelStyle"
+                            Font-Bold="True" Text="Fecha Procedencia:" Width="145px"></asp:Label></td>
+                    <td style="width: 461px; text-align: left">
+                        <table>
+                            <tr>
+                                <td>
+                                    <cc1:CalendarExtender ID="CEPro" runat="server" Format="dd/MM/yyyy" PopupButtonID="Image1"
+                                            TargetControlID="SelDateFechaProcedencia">
+                                    </cc1:CalendarExtender>
+                                    <asp:TextBox ID="SelDateFechaProcedencia" runat="server" TabIndex="6" ValidationGroup="1"
+                                        Width="97px"></asp:TextBox></td>
+                                <td>
+                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/AlfaNetImagen/ToolBar/calendario.gif" /></td>
+                                <td>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="SelDateFechaVencimiento"
+                                        ErrorMessage="Debe ingresar la Procedencia" Height="15px" SetFocusOnError="True"
+                                        Width="7px">*</asp:RequiredFieldValidator><asp:RangeValidator ID="RangeVFecVen" runat="server"
+                                            ControlToValidate="SelDateFechaVencimiento" ErrorMessage="La Fecha de Vencimiento debe ser Mayor que la Fecha de Radicacion"
+                                            MaximumValue="31/12/2050" Type="Date" Width="10px">*</asp:RangeValidator></td>
+                                <td>
+                                    <asp:Label ID="LblFechaVencimiento" runat="server" CssClass="LabelStyle"
+                                        Font-Bold="True" Text="Fecha Vencimiento:" Width="145px"></asp:Label></td>
+                                <td>
+                                    <cc1:CalendarExtender ID="CEVen" runat="server" Format="dd/MM/yyyy" PopupButtonID="Image2"
+                                            TargetControlID="SelDateFechaVencimiento">
+                                    </cc1:CalendarExtender>
+                                    <asp:TextBox ID="SelDateFechaVencimiento" runat="server" TabIndex="7" ValidationGroup="1"
+                                        Width="97px"></asp:TextBox></td>
+                                <td>
+                                    <asp:Image ID="Image2" runat="server" ImageUrl="~/AlfaNetImagen/ToolBar/calendario.gif" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                
+                    <td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TxtProcedencia"
+                            ErrorMessage="Debe ingresar la Procedencia" Height="15px" SetFocusOnError="True"
+                            Width="7px">*</asp:RequiredFieldValidator></td>
+                    <td colspan="2" style="vertical-align: top; text-align: left">
+                        <%-- <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                                                    <ContentTemplate>--%>
+                        <%--</ContentTemplate>
+                                                                </asp:UpdatePanel>--%>
+          <asp:UpdatePanel id="UpdatePanel2" runat="server">
+                            <contenttemplate>
+<TABLE style="WIDTH: 270px"><TBODY><TR><TD><asp:Label id="LblProcedencia" runat="server" Width="145px" Font-Bold="True" Text="Procedencia:" CssClass="LabelStyle" __designer:wfdid="w176"></asp:Label> <asp:RadioButtonList id="RadBtnLstFindby" runat="server" Width="124px" Font-Size="Smaller" ForeColor="RoyalBlue" Height="1px" Font-Italic="False" __designer:wfdid="w177" RepeatDirection="Horizontal" OnSelectedIndexChanged="RadBtnLstFindby_SelectedIndexChanged" AutoPostBack="True">
+                                <asp:ListItem Selected="True" Value="1">Nombre</asp:ListItem>
+                                <asp:ListItem Value="2">Codigo</asp:ListItem>
+                            </asp:RadioButtonList></TD><TD><cc1:AutoCompleteExtender id="AutoCompleteExtender2" runat="server" TargetControlID="TxtProcedencia" ServicePath="../../AutoComplete.asmx" ServiceMethod="GetProcedenciaByTextNombre" MinimumPrefixLength="0" __designer:wfdid="w178" CompletionInterval="100"></cc1:AutoCompleteExtender> <asp:TextBox id="TxtProcedencia" tabIndex=10 runat="server" Width="424px" Font-Size="8pt" Height="28px" CssClass="TxtAutoComplete" __designer:wfdid="w179" TextMode="MultiLine"></asp:TextBox> </TD><TD><asp:ImageButton id="ImageButton1" onclick="ImageButton1_Click" runat="server" Width="15px" ValidationGroup="false" Height="15px" CausesValidation="False" ToolTip="Buscar Procedencia" ImageUrl="~/AlfaNetImagen/ToolBar/zoom.png" __designer:wfdid="w180"></asp:ImageButton> </TD><TD><asp:ImageButton id="ImageButton6" onclick="ImageButton6_Click" runat="server" Width="15px" __designer:dtid="4222124650659922" Height="15px" CausesValidation="False" ToolTip="Nueva Procedencia" ImageUrl="~/AlfaNetImagen/ToolBar/Add.png" __designer:wfdid="w181" OnClientClick='    if (confirm("Desea Crear Una Nueva Procedencia?")==true)&#13;&#10;                                                                            return true;&#13;&#10;                                                                            else&#13;&#10;                                                                            return false;&#13;&#10;                                                                             '></asp:ImageButton></TD></TR></TBODY></TABLE>
+</contenttemplate>
+              <triggers>
+<asp:PostBackTrigger ControlID="ImageButton6"></asp:PostBackTrigger>
+</triggers>
+                        </asp:UpdatePanel>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <%--<asp:RequiredFieldValidator ID="RFVTxtDetalle" runat="server" ControlToValidate="TxtDetalle"
+                                                            ErrorMessage="Debe ingresar el detalle" Height="15px" SetFocusOnError="True"
+                                                            Width="7px">*</asp:RequiredFieldValidator>--%>
+                    </td>
+                    <td style="text-align: left">
+                        <asp:Label ID="LblDetalle" runat="server" CssClass="LabelStyle"
+                            Font-Bold="True" Style="text-align: left" Text="Detalle:"
+                            Width="145px"></asp:Label></td>
+                    <td style="vertical-align: top; width: 461px; text-align: left">
+                        <cc1:Accordion ID="Accordion1" runat="server" AutoSize="None" ContentCssClass="accordionContent"
+                                FadeTransitions="false" FramesPerSecond="40" HeaderCssClass="accordionHeader"
+                                HeaderSelectedCssClass="accordionHeaderSelected" Height="41px" RequireOpenedPane="false"
+                                SelectedIndex="-1" SuppressHeaderPostbacks="true" TransitionDuration="250" Width="470px">
+                            <Panes>
+                                <cc1:AccordionPane ID="AccordionPane3" runat="server" ContentCssClass="" HeaderCssClass="">
+                                    <Header>
+                                        <a class="accordionLink" href="">Detalle.:</a>
+                                    </Header>
+                                    <Content>
+                                        <cc1:TextBoxWatermarkExtender ID="WatermarkDetalle" runat="server" TargetControlID="TxtDetalle"
+                                                WatermarkText="Escriba por favor el detalle del radicado...">
+                                        </cc1:TextBoxWatermarkExtender>
+                                        <asp:TextBox ID="TxtDetalle" runat="server" Height="100px" TabIndex="12" TextMode="MultiLine"
+                                            Width="430px"></asp:TextBox>
+                                    </Content>
+                                </cc1:AccordionPane>
+                            </Panes>
+                        </cc1:Accordion>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TxtNaturaleza"
+                            ErrorMessage="Debe ingresar la Naturaleza" Height="15px" SetFocusOnError="True"
+                            Width="7px">*
+                                                                    </asp:RequiredFieldValidator></td>
+                    <td style="text-align: left;">
+                        <asp:Label ID="LblNaturaleza" runat="server" CssClass="LabelStyle"
+                            Font-Bold="True" Text="Naturaleza:" Width="145px"></asp:Label></td>
+                    <td style="width: 461px; text-align: left;">
+                        <%--<asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                                                                    <ContentTemplate>--%>
+                        <%--</ContentTemplate>
+                                                                </asp:UpdatePanel>--%>
+                        <asp:UpdatePanel id="UpdatePanel3" runat="server">
+                            <contenttemplate>
+<TABLE style="WIDTH: 198px; HEIGHT: 1px"><TBODY><TR><TD><cc1:AutoCompleteExtender id="AutoCompleteNatulezaDoc" runat="server" TargetControlID="TxtNaturaleza" ServicePath="../../AutoComplete.asmx" ServiceMethod="GetNaturalezaByText" MinimumPrefixLength="0" __designer:wfdid="w32" CompletionInterval="100" UseContextKey="True"></cc1:AutoCompleteExtender> <asp:TextBox id="TxtNaturaleza" tabIndex=14 runat="server" Width="424px" Font-Size="8pt" CssClass="TxtAutoComplete" __designer:wfdid="w33"></asp:TextBox> </TD><TD><asp:ImageButton id="ImageButton2" onclick="ImageButton2_Click1" runat="server" Width="15px" ValidationGroup="false" Height="15px" CausesValidation="False" ToolTip="Buscar Naturaleza" ImageUrl="~/AlfaNetImagen/ToolBar/zoom.png" __designer:wfdid="w34"></asp:ImageButton> </TD><TD><asp:ImageButton id="ImageButton7" onclick="ImageButton7_Click" runat="server" Width="15px" __designer:dtid="4222124650659922" Height="15px" CausesValidation="False" ToolTip="Nueva Naturaleza" ImageUrl="~/AlfaNetImagen/ToolBar/Add.png" __designer:wfdid="w35" OnClientClick='    if (confirm("Desea Crear Una Nueva Naturaleza?")==true)&#13;&#10;                                                                            return true;&#13;&#10;                                                                            else&#13;&#10;                                                                            return false;&#13;&#10;                                                                             '></asp:ImageButton></TD></TR></TBODY></TABLE>
+</contenttemplate>
+                            <triggers>
+<asp:PostBackTrigger ControlID="ImageButton7"></asp:PostBackTrigger>
+</triggers>
+                        </asp:UpdatePanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TxtMedioRecibo"
+                            ErrorMessage="Debe ingresar el Medio" Height="15px" SetFocusOnError="True" Width="7px">*</asp:RequiredFieldValidator></td>
+                    <td style="text-align: left">
+                        <asp:Label ID="LblMedioRecibo" runat="server" CssClass="LabelStyle"
+                            Font-Bold="True" Text="Medio de Recibo:" Width="145px"></asp:Label></td>
+                    <td style="width: 461px; text-align: left">
+                        <%-- <asp:UpdatePanel ID="UpdatePanel4" runat="server">
+                                                                    <ContentTemplate>--%>
+                        <asp:UpdatePanel id="UpdatePanel5" runat="server">
+                            <contenttemplate>
+<TABLE style="WIDTH: 270px"><TBODY><TR><TD><cc1:AutoCompleteExtender id="AutoCompleteMedioRecibo" runat="server" TargetControlID="TxtMedioRecibo" ServicePath="../../AutoComplete.asmx" ServiceMethod="GetMedioByText" MinimumPrefixLength="0" CompletionInterval="100" UseContextKey="True"></cc1:AutoCompleteExtender> <asp:TextBox id="TxtMedioRecibo" tabIndex=16 runat="server" Width="424px" Font-Size="8pt" CssClass="TxtAutoComplete"></asp:TextBox> </TD><TD style="WIDTH: 3px"><asp:ImageButton id="ImageButton3" onclick="ImageButton3_Click1" runat="server" Width="15px" ValidationGroup="false" Height="15px" CausesValidation="False" ToolTip="Buscar Medio" ImageUrl="~/AlfaNetImagen/ToolBar/zoom.png"></asp:ImageButton></TD><TD style="WIDTH: 3px"><asp:ImageButton id="ImageButton8" runat="server" Width="15px" __designer:dtid="4222124650659922" Height="15px" CausesValidation="False" ToolTip="Nuevo Medio" ImageUrl="~/AlfaNetImagen/ToolBar/Add.png" __designer:wfdid="w36" OnClientClick='    if (confirm("Desea Crear Una Nuevo Medio de Recibo?")==true)&#13;&#10;                                                                            return true;&#13;&#10;                                                                            else&#13;&#10;                                                                            return false;&#13;&#10;                                                                             ' OnClick="ImageButton8_Click"></asp:ImageButton></TD></TR></TBODY></TABLE>
+</contenttemplate>
+                        </asp:UpdatePanel>
+                        <%-- </ContentTemplate>
+                                                                </asp:UpdatePanel>--%>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TxtExpediente"
+                            ErrorMessage="Debe ingresar el Expediente" Height="15px" SetFocusOnError="True"
+                            Width="7px">*</asp:RequiredFieldValidator></td>
+                    <td style="text-align: left">
+                        <asp:Label ID="Label3" runat="server" CssClass="LabelStyle"
+                            Font-Bold="True" Text="Expediente:" Width="145px"></asp:Label></td>
+                    <td style="width: 461px; text-align: left">
+                        <%-- <asp:UpdatePanel ID="UpdatePanel5" runat="server">
+                                                                    <ContentTemplate>--%>
+                        <asp:UpdatePanel id="UpdatePanel4" runat="server">
+                            <contenttemplate>
+<TABLE style="WIDTH: 270px"><TBODY><TR><TD><cc1:AutoCompleteExtender id="AutoCompleteExpediente" runat="server" TargetControlID="TxtExpediente" ServicePath="../../AutoComplete.asmx" ServiceMethod="GetExpedienteByTextNombre" MinimumPrefixLength="0" CompletionInterval="100" UseContextKey="True"></cc1:AutoCompleteExtender> <asp:TextBox id="TxtExpediente" tabIndex=18 runat="server" Width="424px" Font-Size="8pt" CssClass="TxtAutoComplete"></asp:TextBox> </TD><TD style="WIDTH: 3px"><asp:ImageButton id="ImageButton4" onclick="ImageButton4_Click1" runat="server" Width="15px" ValidationGroup="flase" Height="15px" CausesValidation="False" ImageUrl="~/AlfaNetImagen/ToolBar/zoom.png"></asp:ImageButton></TD><TD style="WIDTH: 3px"><asp:ImageButton id="ImageButton9" runat="server" Width="15px" __designer:dtid="4222124650659922" Height="15px" CausesValidation="False" ToolTip="Nuevo Expediente" ImageUrl="~/AlfaNetImagen/ToolBar/Add.png" __designer:wfdid="w37" OnClientClick='    if (confirm("Desea Crear Una Nuevo Expediente?")==true)&#13;&#10;                                                                            return true;&#13;&#10;                                                                            else&#13;&#10;                                                                            return false;&#13;&#10;                                                                             ' OnClick="ImageButton9_Click"></asp:ImageButton></TD></TR></TBODY></TABLE>
+</contenttemplate>
+                        </asp:UpdatePanel>
+                        <%-- </ContentTemplate>
+                                                                    </asp:UpdatePanel>--%>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TxtSerieD"
+                            ErrorMessage="Debe ingresar el Destino" Height="15px" SetFocusOnError="True"
+                            Width="7px">*</asp:RequiredFieldValidator></td>
+                    <td style="text-align: left">
+                        <asp:Label ID="LblCargarA" runat="server" CssClass="LabelStyle"
+                            Font-Bold="True" Text="Cargar a:" Width="145px"></asp:Label></td>
+                    <td style="width: 461px; text-align: left">
+                        <%--<asp:UpdatePanel ID="UpdatePanel6" runat="server">
+                                                                    <ContentTemplate>--%>
+                        <%-- </ContentTemplate>
+                                                                    </asp:UpdatePanel>--%>
+                        <asp:UpdatePanel id="UpdatePanel7" runat="server">
+                            <contenttemplate>
+<TABLE style="WIDTH: 270px"><TBODY><TR><TD><cc1:AutoCompleteExtender id="AutoCompleteExtender1" runat="server" TargetControlID="TxtSerieD" ServicePath="../../AutoComplete.asmx" ServiceMethod="GetDependenciaByText" MinimumPrefixLength="0" __designer:wfdid="w200" CompletionInterval="100" UseContextKey="True"></cc1:AutoCompleteExtender> <asp:HiddenField id="HFCargar" runat="server" __designer:wfdid="w201"></asp:HiddenField> <cc1:PopupControlExtender id="PopupControlExtender1" runat="server" TargetControlID="ImgFindCargar" __designer:wfdid="w202" Position="Top" PopupControlID="Panel88" CommitScript="e.value += ' - SEND A MEETING REQUEST!';" CommitProperty="value" BehaviorID="PopupControlExtender1">
+                                    </cc1:PopupControlExtender> <asp:TextBox id="TxtSerieD" tabIndex=20 runat="server" Width="424px" Font-Size="8pt" CssClass="TxtAutoComplete" __designer:wfdid="w203"></asp:TextBox> <asp:Panel id="Panel88" runat="server" Width="424px" CssClass="popupControl" __designer:wfdid="w204" ScrollBars="Vertical"><DIV><asp:TreeView id="TreeView1" runat="server" __designer:wfdid="w205" ExpandDepth="0" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged" OnTreeNodePopulate="TreeView1_TreeNodePopulate" ShowLines="True">
+                                                <ParentNodeStyle Font-Bold="False" />
+                                                <HoverNodeStyle Font-Underline="True" />
+                                                <SelectedNodeStyle Font-Underline="True" HorizontalPadding="0px" VerticalPadding="0px" />
+                                                <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px"
+                                                        NodeSpacing="0px" VerticalPadding="0px" />
+                                                <Nodes>
+                                                    <asp:TreeNode Expanded="False" PopulateOnDemand="True" SelectAction="Expand" Text="Seleccione Dependencia..."
+                                                            Value="0"></asp:TreeNode>
+                                                </Nodes>
+                                            </asp:TreeView> <asp:TreeView id="TreeVSerie" runat="server" __designer:wfdid="w206" ExpandDepth="0" OnSelectedNodeChanged="TreeVSerie_SelectedNodeChanged" OnTreeNodePopulate="TreeVSerie_TreeNodePopulate" ShowLines="True">
+                                                <ParentNodeStyle Font-Bold="False" />
+                                                <HoverNodeStyle Font-Underline="True" />
+                                                <SelectedNodeStyle Font-Underline="True" HorizontalPadding="0px" VerticalPadding="0px" />
+                                                <Nodes>
+                                                    <asp:TreeNode Expanded="False" PopulateOnDemand="True" SelectAction="Expand" Text="Seleccione Serie..."
+                                                            Value="0"></asp:TreeNode>
+                                                </Nodes>
+                                                <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px"
+                                                        NodeSpacing="0px" VerticalPadding="0px" />
+                                            </asp:TreeView> <asp:TreeView id="TreeVProceso" runat="server" __designer:wfdid="w207" ExpandDepth="0" OnSelectedNodeChanged="TreeVProceso_SelectedNodeChanged" OnTreeNodePopulate="TreeVProceso_TreeNodePopulate" ShowLines="True">
+                                                <ParentNodeStyle Font-Bold="False" />
+                                                <HoverNodeStyle Font-Underline="True" />
+                                                <SelectedNodeStyle Font-Underline="True" HorizontalPadding="0px" VerticalPadding="0px" />
+                                                <Nodes>
+                                                    <asp:TreeNode Expanded="False" PopulateOnDemand="True" SelectAction="Expand" Text="Seleccione Proceso..."
+                                                            Value="0"></asp:TreeNode>
+                                                </Nodes>
+                                                <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px"
+                                                        NodeSpacing="0px" VerticalPadding="0px" />
+                                            </asp:TreeView> </DIV></asp:Panel> </TD><TD style="WIDTH: 3px"><asp:Image id="ImgFindCargar" runat="server" Width="15px" Height="15px" ImageUrl="~/AlfaNetImagen/ToolBar/zoom.png" __designer:wfdid="w208"></asp:Image></TD><TD style="WIDTH: 3px"><asp:Image id="ImgCargarAdd" runat="server" Width="15px" Height="15px" ToolTip="Add Nueva Carga" ImageUrl="~/AlfaNetImagen/ToolBar/Add.png" __designer:wfdid="w209"></asp:Image> <asp:Panel id="PnlCargarAdd" runat="server" Width="128px" CssClass="popupControl" __designer:wfdid="w210"><DIV><asp:ImageButton id="ImageButton11" onclick="ImageButton11_Click" runat="server" Width="15px" __designer:dtid="4222124650659922" Height="15px" CausesValidation="False" ToolTip="Nueva Dependencia" ImageUrl="~/AlfaNetImagen/ToolBar/Add.png" __designer:wfdid="w211" OnClientClick='    if (confirm("Desea Crear Una Nueva Dependencia?")==true)&#13;&#10;                                                                            return true;&#13;&#10;                                                                            else&#13;&#10;                                                                            return false;&#13;&#10;                                                                             '></asp:ImageButton> <asp:Label id="Label1" runat="server" Text="Nueva Dependencia" ToolTip="Nueva Dependencia" __designer:wfdid="w212"></asp:Label><BR /><asp:ImageButton id="ImageButton12" onclick="ImageButton12_Click" runat="server" Width="15px" __designer:dtid="4222124650659922" Height="15px" CausesValidation="False" ToolTip="Nueva Serie" ImageUrl="~/AlfaNetImagen/ToolBar/Add.png" __designer:wfdid="w213" OnClientClick='    if (confirm("Desea Crear Una Nueva Serie?")==true)&#13;&#10;                                                                            return true;&#13;&#10;                                                                            else&#13;&#10;                                                                            return false;&#13;&#10;                                                                             '></asp:ImageButton> <asp:Label id="Label2" runat="server" Text="Nueva Serie" __designer:wfdid="w214"></asp:Label><BR /><asp:ImageButton id="ImageButton13" onclick="ImageButton13_Click" runat="server" Width="15px" __designer:dtid="4222124650659922" Height="15px" CausesValidation="False" ToolTip="Nuevo Proceso" ImageUrl="~/AlfaNetImagen/ToolBar/Add.png" __designer:wfdid="w215" OnClientClick='    if (confirm("Desea Crear Una Nuevo Proceso?")==true)&#13;&#10;                                                                            return true;&#13;&#10;                                                                            else&#13;&#10;                                                                            return false;&#13;&#10;                                                                             '></asp:ImageButton> <asp:Label id="Label4" runat="server" Text="Nuevo Proceso" __designer:wfdid="w216"></asp:Label>&nbsp;&nbsp; </DIV></asp:Panel><cc1:PopupControlExtender id="PopupControlExtender2" runat="server" TargetControlID="ImgCargarAdd" __designer:wfdid="w217" Position="Top" PopupControlID="PnlCargarAdd" CommitScript="e.value += ' - SEND A MEETING REQUEST!';" CommitProperty="value" BehaviorID="PopupControlExtender2"></cc1:PopupControlExtender></TD></TR></TBODY></TABLE>
+</contenttemplate>
+                            <triggers>
+<asp:AsyncPostBackTrigger ControlID="TreeVProceso" EventName="SelectedNodeChanged"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="TreeView1" EventName="SelectedNodeChanged"></asp:AsyncPostBackTrigger>
+<asp:AsyncPostBackTrigger ControlID="TreeVSerie" EventName="SelectedNodeChanged"></asp:AsyncPostBackTrigger>
+</triggers>
+                        </asp:UpdatePanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TxtAccion"
+                            ErrorMessage="Debe ingresar la Accion" Height="15px" SetFocusOnError="True"
+                            Width="7px">*</asp:RequiredFieldValidator></td>
+                    <td style="text-align: left">
+                        <asp:Label ID="LblAccion" runat="server" CssClass="LabelStyle"
+                            Font-Bold="True" Text="Accion:" Width="145px"></asp:Label></td>
+                    <td style="width: 461px; text-align: left">
+                        <%--<asp:UpdatePanel ID="UpdatePanel7" runat="server">
+                                                                    <ContentTemplate>--%>
+                        <asp:UpdatePanel id="UpdatePanel6" runat="server">
+                            <contenttemplate>
+<TABLE style="WIDTH: 270px"><TBODY><TR><TD><cc1:AutoCompleteExtender id="AutoCompleteAccion" runat="server" TargetControlID="TxtAccion" ServicePath="../../AutoComplete.asmx" ServiceMethod="GetWFAccionTextByText" MinimumPrefixLength="0" CompletionInterval="100" UseContextKey="True"></cc1:AutoCompleteExtender> <asp:TextBox id="TxtAccion" tabIndex=22 runat="server" Width="424px" Font-Size="8pt" CssClass="TxtAutoComplete" CausesValidation="True"></asp:TextBox> </TD><TD style="WIDTH: 3px"><asp:ImageButton id="ImageButton5" onclick="ImageButton5_Click1" runat="server" Width="15px" ValidationGroup="false" Height="15px" CausesValidation="False" ImageUrl="~/AlfaNetImagen/ToolBar/zoom.png"></asp:ImageButton></TD><TD style="WIDTH: 3px"><asp:ImageButton id="ImageButton10" onclick="ImageButton9_Click" runat="server" Width="15px" __designer:dtid="4222124650659922" Height="15px" CausesValidation="False" ToolTip="Nueva Accion" ImageUrl="~/AlfaNetImagen/ToolBar/Add.png" __designer:wfdid="w38" OnClientClick='    if (confirm("Desea Crear Una Nuevo Accion?")==true)&#13;&#10;                                                                            return true;&#13;&#10;                                                                            else&#13;&#10;                                                                            return false;&#13;&#10;                                                                             '></asp:ImageButton></TD></TR></TBODY></TABLE>
+</contenttemplate>
+                        </asp:UpdatePanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td style="vertical-align: middle; text-align: left">
+                        <asp:Image ID="Image4" runat="server" ImageUrl="~/AlfaNetImagen/ToolBar/file.gif" /><br />
+                        <br />
+                        <asp:Image ID="Image3" runat="server" ImageUrl="~/AlfaNetImagen/ToolBar/SendMailPeople.JPG" Height="15px" Width="13px" /></td>
+                    <td style="width: 461px; text-align: left">
+                        <cc1:Accordion ID="MyAccordion" runat="server" AutoSize="None" ContentCssClass="accordionContent"
+                                FadeTransitions="false" FramesPerSecond="40" HeaderCssClass="accordionHeader"
+                                HeaderSelectedCssClass="accordionHeaderSelected" RequireOpenedPane="false" SelectedIndex="-1"
+                                SuppressHeaderPostbacks="true" TransitionDuration="250" Width="470">
+                            <Panes>
+                                <cc1:AccordionPane ID="AccordionPane1" runat="server">
+                                    <Header>
+                                        <a class="accordionLink" href="">Anexo.:</a></Header>
+                                    <Content>
+                                        <asp:Label ID="LblAnexo" runat="server" CssClass="TxtFormulario" Text="Anexo.:">
+                                                                                </asp:Label>
+                                        <asp:TextBox ID="TxtAnexo" runat="server" Height="90px" TabIndex="23" TextMode="MultiLine"
+                                            Width="420px"></asp:TextBox>
+                                        <cc1:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender200" runat="server" TargetControlID="TxtAnexo"
+                                                WatermarkText="Escriba por favor el Anexo del Registro...">
+                                        </cc1:TextBoxWatermarkExtender>
+                                    </Content>
+                                </cc1:AccordionPane>
+                                <cc1:AccordionPane ID="AccordionPane2" runat="server">
+                                    <Header>
+                                        <a class="accordionLink" href="">Enterar A.:</a></Header>
+                                    <Content>
+                                        <%--<asp:UpdatePanel ID="UpdatePanelEnterar" runat="server" UpdateMode="Conditional">
+                                                                                    <ContentTemplate>--%>
+                                        <asp:Panel id="Paneldep" runat="server" DefaultButton="ImgBtnAdd">
+                                        <asp:RequiredFieldValidator id="RequiredFieldValidator21" runat="server" Width="7px" ValidationGroup="Enterar" SetFocusOnError="True" Height="15px" ErrorMessage="Seleccione la Dependencia" ControlToValidate="TxtDependencia1" Enabled="true">*</asp:RequiredFieldValidator><asp:UpdatePanel id="UpdatePanel8" runat="server"><ContentTemplate>
+<TABLE style="WIDTH: 270px"><TBODY><TR><TD style="WIDTH: 38px; HEIGHT: 10px"><cc1:AutoCompleteExtender id="AutoCompleteExtender3" runat="server" TargetControlID="TxtDependencia1" ServicePath="../../AutoComplete.asmx" ServiceMethod="GetDependenciaByText" MinimumPrefixLength="0" CompletionInterval="100"></cc1:AutoCompleteExtender> <cc1:TextBoxWatermarkExtender id="TextBoxWatermarkExtender6" watermarkText="Seleccione una Dependencia..." runat="server" TargetControlID="TxtDependencia1">
+                                                        </cc1:TextBoxWatermarkExtender> <asp:Label id="Label14" runat="server" Width="155px" Font-Bold="False" Text="Dependencia.:" CssClass="LabelStyle"></asp:Label> <asp:TextBox id="TxtDependencia1" tabIndex=25 runat="server" Width="353px" ValidationGroup="Enterar" CssClass="TxtAutoComplete"></asp:TextBox></TD><TD style="WIDTH: 38px; HEIGHT: 10px"><asp:ImageButton id="ImgBtnAdd" tabIndex=26 onclick="ImgBtnAdd_Click" runat="server" ValidationGroup="Enterar" ToolTip="Agregar Dependencia" ImageUrl="~/AlfaNetImagen/ToolBar/Add.png" Enabled="True"></asp:ImageButton> <asp:ImageButton id="ImgBtnDelete" tabIndex=26 onclick="ImgBtnDelete_Click" runat="server" ValidationGroup="Enterar" CausesValidation="False" ToolTip="Eliminar Dependencia" ImageUrl="~/AlfaNetImagen/ToolBar/Delete.png" Enabled="True"></asp:ImageButton> </TD></TR><TR><TD style="WIDTH: 38px; HEIGHT: 10px"><asp:ListBox id="ListBoxEnterar" runat="server" Width="360px"></asp:ListBox> <asp:RadioButtonList id="RBEnterarA" tabIndex=8 runat="server" Width="358px" Font-Size="8pt" ValidationGroup="1" RepeatDirection="Horizontal" OnSelectedIndexChanged="RBEnterarA_SelectedIndexChanged" AutoPostBack="True"><asp:ListItem Selected="True" Value="1">Dependencias Individuales</asp:ListItem>
+<asp:ListItem Value="T">Todas Las Dependencias</asp:ListItem>
+</asp:RadioButtonList> </TD></TR></TBODY></TABLE>
+</ContentTemplate>
+</asp:UpdatePanel></asp:Panel>
+                                        <%--</ContentTemplate>
+                                                                                    <Triggers>
+                                                                                        <asp:AsyncPostBackTrigger ControlID="LinkButton6" EventName="Click" />
+                                                                                        <asp:AsyncPostBackTrigger ControlID="LinkButton7" EventName="Click" />
+                                                                                        <asp:AsyncPostBackTrigger ControlID="ImgBtnAdd" EventName="Click" />
+                                                                                        <asp:AsyncPostBackTrigger ControlID="ImgBtnDelete" EventName="Click" />
+                                                                                    </Triggers>
+                                                                                </asp:UpdatePanel>--%>
+                                    </Content>
+                                </cc1:AccordionPane>
+                            </Panes>
+                        </cc1:Accordion>
+                    </td>
+                </tr>
+            </table>
+            </td>        </tr>
+        <tr>
+            <td style="vertical-align: top; width: 747px; height: 100%; text-align: center">
+                <asp:UpdatePanel id="UpdatePanel1" runat="server">
+                    <contenttemplate>
+<asp:Panel style="DISPLAY: none" id="PnlMensaje" runat="server" BackColor="ButtonHighlight"><TABLE><TBODY><TR><TD style="BACKGROUND-COLOR: gray" align=center><asp:Label id="Label555" runat="server" Width="120px" Font-Size="14pt" ForeColor="White" Font-Bold="False" Text="Mensaje"></asp:Label></TD><TD style="WIDTH: 5%; BACKGROUND-COLOR: gray"><asp:ImageButton style="VERTICAL-ALIGN: top" id="btnCerrar" runat="server" ValidationGroup="789" ImageUrl="~/AlfaNetImagen/ToolBar/cross.png" ImageAlign="Right"></asp:ImageButton> </TD></TR><TR><TD align=center colSpan=2><BR /><asp:Label id="LblMessageBox" runat="server" Font-Size="XX-Large" ForeColor="Maroon"></asp:Label> </TD></TR></TBODY></TABLE></asp:Panel><cc1:ModalPopupExtender id="ModalPopupExtender1" runat="server" TargetControlID="LblMessageBox" PopupControlID="PnlMensaje" BackgroundCssClass="MessageStyle">
+                                        </cc1:ModalPopupExtender> 
+</contenttemplate>
+                </asp:UpdatePanel></td>
+        </tr>
+        <tr>
+            <td style="width: 747px">
+                <asp:ValidationSummary ID="ValidationSummaryRadicado" runat="server"
+                    DisplayMode="List" Font-Size="10pt" Style="vertical-align: middle; text-align: left" />
+                <asp:Label ID="ExceptionDetails" runat="server" Font-Size="10pt" ForeColor="Red" Width="100%"></asp:Label>
+                <asp:ObjectDataSource ID="GroupDataSource" runat="server" DeleteMethod="DeleteGrupo"
+                    InsertMethod="AddGrupo" OldValuesParameterFormatString="original_{0}" SelectMethod="GetGrupoByID"
+                    TypeName="GrupoBLL" UpdateMethod="UpdateGrupo">
+                    <DeleteParameters>
+                        <asp:Parameter Name="GrupoCodigo" Type="String" />
+                    </DeleteParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="GrupoCodigo" Type="String" />
+                        <asp:Parameter Name="GrupoNombre" Type="String" />
+                        <asp:Parameter Name="GrupoCodigoPadre" Type="String" />
+                        <asp:Parameter Name="GrupoConsecutivo" Type="Int32" />
+                        <asp:Parameter Name="GrupoHabilitar" Type="Boolean" />
+                        <asp:Parameter Name="GrupoPermiso" Type="Boolean" />
+                    </UpdateParameters>
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="" Name="GrupoCodigo" Type="String" />
+                    </SelectParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="GrupoCodigo" Type="String" />
+                        <asp:Parameter Name="GrupoNombre" Type="String" />
+                        <asp:Parameter Name="GrupoCodigoPadre" Type="String" />
+                        <asp:Parameter Name="GrupoConsecutivo" Type="Int32" />
+                        <asp:Parameter Name="GrupoHabilitar" Type="Boolean" />
+                        <asp:Parameter Name="GrupoPermiso" Type="Boolean" />
+                    </InsertParameters>
+                </asp:ObjectDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnStrSQLServer %>"
+                    SelectCommand="SELECT [WFProcesoCodigo], [WFProcesoDescripcion] FROM [WFProceso] WHERE ([WFProcesoHabilitar] = @WFProcesoHabilitar) ORDER BY [WFProcesoCodigo], [WFProcesoDescripcion]">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="1" Name="WFProcesoHabilitar" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+                <asp:ObjectDataSource ID="RadicadoDataSource" runat="server" InsertMethod="AddRadicado"
+                    OldValuesParameterFormatString="original_{0}" SelectMethod="GetGroupById" TypeName="RadicadoBLL"
+                    UpdateMethod="AddRadicado">
+                    <UpdateParameters>
+                        <asp:Parameter Name="GrupoCodigo" Type="String" />
+                        <asp:Parameter Name="WFMovimientoFecha" Type="DateTime" />
+                        <asp:Parameter Name="RadicadoFechaProcedencia" Type="DateTime" />
+                        <asp:Parameter Name="ProcedenciaCodigo" Type="String" />
+                        <asp:Parameter Name="RadicadoNumeroExterno" Type="String" />
+                        <asp:Parameter Name="NaturalezaCodigo" Type="String" />
+                        <asp:Parameter Name="DependenciaCodigo" Type="String" />
+                        <asp:Parameter Name="RadicadoDetalle" Type="String" />
+                        <asp:Parameter Name="RadicadoFechaVencimiento" Type="DateTime" />
+                        <asp:Parameter Name="ExpedienteCodigo" Type="String" />
+                        <asp:Parameter Name="MedioCodigo" Type="String" />
+                        <asp:Parameter Name="DependenciaCodDestino" Type="String" />
+                        <asp:Parameter Name="WFAccionCodigo" Type="String" />
+                        <asp:Parameter Name="WFMovimientoFechaEst" Type="DateTime" />
+                        <asp:Parameter Name="WFMovimientoFechaFin" Type="DateTime" />
+                        <asp:Parameter Name="WFMovimientoTipo" Type="Int32" />
+                        <asp:Parameter Name="WFMovimientoNotas" Type="String" />
+                        <asp:Parameter Name="SerieCodigo" Type="String" />
+                        <asp:Parameter Name="WFMovimientoMultitarea" Type="String" />
+                    </UpdateParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="GrupoCodigo" Type="String" />
+                        <asp:Parameter Name="WFMovimientoFecha" Type="DateTime" />
+                        <asp:Parameter Name="RadicadoFechaProcedencia" Type="DateTime" />
+                        <asp:Parameter Name="ProcedenciaCodigo" Type="String" />
+                        <asp:Parameter Name="RadicadoNumeroExterno" Type="String" />
+                        <asp:Parameter Name="NaturalezaCodigo" Type="String" />
+                        <asp:Parameter Name="DependenciaCodigo" Type="String" />
+                        <asp:Parameter Name="RadicadoDetalle" Type="String" />
+                        <asp:Parameter Name="RadicadoFechaVencimiento" Type="DateTime" />
+                        <asp:Parameter Name="ExpedienteCodigo" Type="String" />
+                        <asp:Parameter Name="MedioCodigo" Type="String" />
+                        <asp:Parameter Name="DependenciaCodDestino" Type="String" />
+                        <asp:Parameter Name="WFAccionCodigo" Type="String" />
+                        <asp:Parameter Name="WFMovimientoFechaEst" Type="DateTime" />
+                        <asp:Parameter Name="WFMovimientoFechaFin" Type="DateTime" />
+                        <asp:Parameter Name="WFMovimientoTipo" Type="Int32" />
+                        <asp:Parameter Name="WFMovimientoNotas" Type="String" />
+                        <asp:Parameter Name="SerieCodigo" Type="String" />
+                        <asp:Parameter Name="WFMovimientoMultitarea" Type="String" />
+                    </InsertParameters>
+                </asp:ObjectDataSource>
+            </td>
+        </tr>
+    </table>
+</asp:Content>
+

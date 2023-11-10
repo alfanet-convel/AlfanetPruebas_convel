@@ -1,0 +1,30 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="NavDocRecibido.ascx.cs" Inherits="AlfaNetDocumentos_NavDocRecibido" %>
+<script type="text/javascript">       
+//     
+           function urlImg(evt) 
+        {
+            var src = window.event != window.undefined ? window.event.srcElement : evt.target;
+            hidden = open('../../AlfaNetDocumentos/DocRecibido/DocRecibidoReporte.aspx?TipoCodigo=1&RadicadoCodigo=1' + src.innerText + '&GrupoCodigo=1&ControlDias=1&Admon=S', 'NewWindow','top=0,left=0, width=800,height=600,status=yes, resizable=yes,scrollbars=yes');
+        }       
+        //Visor de Imagenes Recibida
+           function VImagenes(evt,NumeroDocumento) 
+        {
+            var src = window.event != window.undefined ? window.event.srcElement : evt.target;
+            hidden = open('../../AlfaNetImagen/VisorImagenes/VisorImagenes.aspx?DocumentoCodigo=' + NumeroDocumento + '&GrupoCodigo=1&Admon=S&ImagenFolio=1', 'NewWindow','top=0,left=0, width=800,height=600,status=yes, resizable=yes,scrollbars=yes');
+            
+        }
+        
+</script>  
+<table>
+    <tr>
+        <td style="vertical-align: middle; width: 100px; text-align: center">
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/AlfaNetDocumentos/Pagina1.aspx"
+                Width="73px">Pagina 1</asp:HyperLink></td>
+        <td style="vertical-align: middle; width: 100px; text-align: center">
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/AlfaNetDocumentos/Pagina2.aspx"
+                Width="73px">Pagina 2</asp:HyperLink></td>
+        <td style="vertical-align: middle; width: 100px; text-align: center">
+            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/AlfaNetDocumentos/Pagina3.aspx"
+                Width="73px">Pagina 3</asp:HyperLink></td>
+    </tr>
+</table>

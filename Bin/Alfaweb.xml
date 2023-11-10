@@ -1,0 +1,507 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Alfaweb
+</name>
+</assembly>
+<members>
+<member name="F:Alfaweb.Report3.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report3.ASPxPivotGridExporter1">
+	<summary>
+ASPxPivotGridExporter1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report3.listExportFormat">
+	<summary>
+listExportFormat control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report3.ButtonOpen">
+	<summary>
+ButtonOpen control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report3.ButtonSaveAs">
+	<summary>
+ButtonSaveAs control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report3.ConsultaRegistros">
+	<summary>
+ConsultaRegistros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report3.fieldRadicadoCodigo">
+	<summary>
+fieldRadicadoCodigo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report3.fieldWFMovimientoFecha">
+	<summary>
+fieldWFMovimientoFecha control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report3.fieldProcedenciaNombre">
+	<summary>
+fieldProcedenciaNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report3.fieldRadicadoDetalle">
+	<summary>
+fieldRadicadoDetalle control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report3.fieldDependenciaNombre">
+	<summary>
+fieldDependenciaNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report3.fieldRespuesta">
+	<summary>
+fieldRespuesta control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report3.fieldWFAccionNombre">
+	<summary>
+fieldWFAccionNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report3.fieldExpedienteNombre">
+	<summary>
+fieldExpedienteNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report3.fieldSerieNombre">
+	<summary>
+fieldSerieNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report3.fieldNaturalezaNombre">
+	<summary>
+fieldNaturalezaNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report3.AlfaWeb">
+	<summary>
+AlfaWeb control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.ASPxPivotGridExporter1">
+	<summary>
+ASPxPivotGridExporter1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.pnlEncabezado">
+	<summary>
+pnlEncabezado control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.ASPxPanel1">
+	<summary>
+ASPxPanel1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.listExportFormat">
+	<summary>
+listExportFormat control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.ButtonOpen">
+	<summary>
+ButtonOpen control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.ButtonSaveAs">
+	<summary>
+ButtonSaveAs control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.ConsultaRadicados">
+	<summary>
+ConsultaRadicados control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.fieldRadicadoCodigo">
+	<summary>
+fieldRadicadoCodigo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.fieldWFMovimientoFecha">
+	<summary>
+fieldWFMovimientoFecha control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.fieldProcedenciaNombre">
+	<summary>
+fieldProcedenciaNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.fieldRadicadoDetalle">
+	<summary>
+fieldRadicadoDetalle control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.fieldRadicadoAnexo">
+	<summary>
+fieldRadicadoAnexo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.fieldNaturalezaNombre">
+	<summary>
+fieldNaturalezaNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.fieldMedioNombre">
+	<summary>
+fieldMedioNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.fieldExpedienteNombre">
+	<summary>
+fieldExpedienteNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.fieldDependenciaNombre">
+	<summary>
+fieldDependenciaNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.AlfaWeb">
+	<summary>
+AlfaWeb control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report1.Panel1">
+	<summary>
+Panel1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb._Default.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb._Default.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb._Default.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb._Default.ImageButton1">
+	<summary>
+ImageButton1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb._Default.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb._Default.ImageButton4">
+	<summary>
+ImageButton4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb._Default.Label4">
+	<summary>
+Label4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb._Default.ImageButton5">
+	<summary>
+ImageButton5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report2.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report2.ASPxPivotGridExporter1">
+	<summary>
+ASPxPivotGridExporter1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report2.listExportFormat">
+	<summary>
+listExportFormat control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report2.ButtonOpen">
+	<summary>
+ButtonOpen control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report2.ButtonSaveAs">
+	<summary>
+ButtonSaveAs control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report2.ConsultaRegistros">
+	<summary>
+ConsultaRegistros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report2.fieldRegistroCodigo">
+	<summary>
+fieldRegistroCodigo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report2.fieldWFMovimientoFecha">
+	<summary>
+fieldWFMovimientoFecha control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report2.fieldDestino">
+	<summary>
+fieldDestino control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report2.fieldRegistroDetalle">
+	<summary>
+fieldRegistroDetalle control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report2.fieldAnexoExtRegistro">
+	<summary>
+fieldAnexoExtRegistro control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report2.fieldNaturalezaNombre">
+	<summary>
+fieldNaturalezaNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report2.fieldMedioNombre">
+	<summary>
+fieldMedioNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report2.fieldExpedienteNombre">
+	<summary>
+fieldExpedienteNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report2.fieldSerieNombre">
+	<summary>
+fieldSerieNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Report2.AlfaWeb">
+	<summary>
+AlfaWeb control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Site1.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Alfaweb.Site1.ContentPlaceHolder1">
+	<summary>
+ContentPlaceHolder1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+</members>
+</doc>

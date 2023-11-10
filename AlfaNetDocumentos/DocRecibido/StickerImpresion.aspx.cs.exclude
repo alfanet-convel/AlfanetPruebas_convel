@@ -1,0 +1,103 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+public partial class AlfaNetDocumentos_DocRecibido_StickerImpresion : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string nrodoc = Request["RadicadoCodigo"];
+        string Grupo = Request["GrupoCodigo"];
+        String CodBar = Request["CodBar"];
+        string GrupoPadre = Request["GrupoPadreCodigo"];
+
+        if (CodBar == "1")
+        {
+            this.LblCodigoBarras.Visible = true;
+        }
+        else
+        {
+            this.LblCodigoBarras.Visible = false;
+        }
+        
+        //string senrodoc = (string)(Session["NroDoc"]);
+        if (nrodoc != null)
+        {
+           
+            this.HFSticker.Value = nrodoc;
+            this.LblCodigoBarras.Text = HFSticker.Value;
+            
+            this.LblCodigoBarras.Text = HFSticker.Value;
+
+            DSInfoTableAdapters.infoTableAdapter Info = new DSInfoTableAdapters.infoTableAdapter();
+            DSInfo.infoDataTable DTInfo = new DSInfo.infoDataTable();
+            DTInfo = Info.GetInfo();
+            LblCliente.Text = DTInfo[0].empresa.ToString();
+
+            if (GrupoPadre == "1")
+            {
+                DSRadicadoTableAdapters.Radicado_ReadRadTableAdapter TARadSticker = new DSRadicadoTableAdapters.Radicado_ReadRadTableAdapter();
+
+                DSRadicado.Radicado_ReadRadDataTable radicado = new DSRadicado.Radicado_ReadRadDataTable();
+                radicado = TARadSticker.GetDataBy(nrodoc,Grupo);
+                DataRow[] rows = radicado.Select();
+
+                this.LblStickercargarA.Text = radicado[0].DependenciaNombre;
+                this.LblStickerFecRad.Text = rows[0]["wfmovimientofecha"].ToString();
+                this.LblStickerNroRad.Text = rows[0]["radicadocodigo"].ToString();
+                this.LblStickerUsr.Text = User.Identity.Name;
+                this.Label2.Visible = false;
+                this.LblDireccion.Visible = false;
+                this.Label8.Text = "Radicado No.";
+                this.Label1.Text = "F Radicacion:";
+               // this.LblStickercargarA0.Text = radicado[0].ProcedenciaNombre;
+                //this.LblStickerUsr.Text = radicado[0].DependenciaNombre;
+            }
+            else if (GrupoPadre == "2")
+            {
+                DSRegistroTableAdapters.Registro_ReadRegistroTableAdapter TARegSticker = new DSRegistroTableAdapters.Registro_ReadRegistroTableAdapter();
+
+                DSRegistro.Registro_ReadRegistroDataTable registro = new DSRegistro.Registro_ReadRegistroDataTable();
+                registro = TARegSticker.GetRegistroById(Grupo, nrodoc);
+                
+                DataRow[] rows = registro.Select();
+                this.Label8.Text = "Registro No.";
+                this.Label1.Text = "F Registro:";
+                if (registro[0].RegistroTipo == "0")
+                {
+                    string tempnombre;
+                    string temporal;
+
+                    this.LblStickercargarA.Text = registro[0].ProcedenciaNombre;
+                    DSProcedenciaSQLTableAdapters.ProcedenciaTableAdapter Tabla = new DSProcedenciaSQLTableAdapters.ProcedenciaTableAdapter();
+                    DSProcedenciaSQL.ProcedenciaDataTable datos = new DSProcedenciaSQL.ProcedenciaDataTable();
+                    tempnombre = registro[0].ProcedenciaCodDestino;
+                    datos = Tabla.GetProcedenciaById(tempnombre);
+                    temporal = datos[0].ProcedenciaDireccion;
+
+                    LblDireccion.Text = temporal;
+                    
+                    }
+                else
+                    if (registro[0].RegistroTipo == "1")
+                    {
+                        this.Label2.Visible = false;
+                        this.LblDireccion.Visible = false;
+                        this.LblStickercargarA.Text = registro[0].dependencianombre1;
+                        
+                    }
+                this.LblStickerFecRad.Text = rows[0]["wfmovimientofecha"].ToString();
+                this.LblStickerNroRad.Text = rows[0]["registrocodigo"].ToString();
+                this.LblStickerUsr.Text = User.Identity.Name;
+                
+            }
+        }
+    }
+}
